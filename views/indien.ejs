@@ -1,0 +1,49 @@
+<%- include('header'); -%>
+
+<main class="container">
+  <div class= "main-wrapper">
+    <button class= "up-down"><i class="fa fa-angle-up"></i></button>
+    <div class= "header header-indien">
+      <div class= "navbar">
+        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+      </div>
+      <div class= "intro intro-restaurant">
+      <span id= "spn-1">
+        <h1> Restaurant : Indien</br></br>
+        </h1>
+      </span>
+    </div>
+    </div>
+    <div class= "service"><!-- div 2-->
+      <h1>Liste restaurant</h1>
+      <div class="liste-restaurant">
+        <form action="/indien" method="post">
+        <ul>
+          <li>Restaurant Maharaja : Plat du jour <br/>Chicken Korma </br>
+            <button name="restaurant" type="submit" class="btn btn-outline-danger btn-maharaja" value="Maharaja : Plat du jour Chicken Korma">Commander</button></li>
+          <li>Restaurant Rasheed : Plat du jour <br/>Samosa </br>
+            <button name="restaurant" type="submit" class="btn btn-outline-danger btn-rasheed" value="Rasheed : Plat du jour Samosa">Commander</button></li>
+          <li>Restaurant Mumbai Dreams : Plat du jour <br/>Poulet tandoori </br>
+            <button name="restaurant" type="submit" class="btn btn-outline-danger btn-mumbai" value="Mumbai Dreams : Plat du jour Poulet tandoori">Commander</button></li>
+          <li>Restaurant Taste of Raaj : Plat du jour <br/>Curry de veau </br>
+            <button name="restaurant" type="submit" class="btn btn-outline-danger btn-raaj" value="Taste of Raaj : Plat du jour Curry de veau">Commander</button></li>
+        </ul>
+        </form>
+      </div>
+    </div>
+    <div class= "footer"><!-- div 3-->
+      <div class= "logo"></div>
+      <div class= "general">
+        <ul>
+          <li><a href= "https://github.com/NHatim">GitHub</a></li>
+          <li><a href= "mailto:hatim.naimi@gmail.com">Contactez-moi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span id= "spn-4"><i class= "fa fa-copyright"></i>
+    &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
+    </span>
+  </div>
+</main>
+<%- include('footer') -%>

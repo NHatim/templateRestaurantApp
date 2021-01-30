@@ -1,6 +1,68 @@
 <%- include('header'); -%>
 <main class="container">
-  <h1><%= title %></h1>
-  <p>Welcome to <%= title %></p>
+  <div class= "main-wrapper">
+    <button class= "up-down"><i class="fa fa-angle-up"></i></button>
+    <div class= "header"> <!-- div 1-->
+      <div class= "navbar">
+        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+       <ul>
+          <li><a href = "/restaurant">Restaurant</a></li>
+          <li><a href = "/livreur">Livreur</a></li>
+          <li><a href = "/gestionnaire">Gestionnaire</a></li>
+        </ul>
+      </div>
+      <div class= "intro">
+      <span id= "spn-1">
+        <h1> Bienvenue sur <br/> <span id="logo-intro-eat">Eat</span>  <span id="logo-intro-it">It</span></h1>
+      </span>
+    </div>
+    </div>
+    <div class= "service"><!-- div 2-->
+      <h1>Cuisines</h1>
+      <div class= "image">
+      <a href="/indien">
+        <div class= "item-1">
+          <div class= "item">
+            <span>Indien</span>
+          </div>
+        </div>
+      </a>
+      <a href="/mexicain">
+        <div class= "item-2">
+          <div class= "item">
+           <span>Mexicain</span>
+          </div>
+        </div>
+      </a>
+      <a href="/italien">
+        <div class= "item-3">
+          <div class= "item">
+            <span>Italien</span>
+          </div>
+        </div>
+      </a>
+      <a href="/snacks">
+        <div class= "item-4">
+          <div class= "item">
+            <span>Snacks</span>
+          </div>
+        </div>
+      </a>
+      </div>
+    </div>
+    <div class= "footer"><!-- div 3-->
+      <div class= "logo"></div>
+      <div class= "general">
+        <ul>
+          <li><a href= "https://github.com/NHatim">GitHub</a></li>
+          <li><a href= "mailto:hatim.naimi@gmail.com">Contactez-moi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span id= "spn-4"><i class= "fa fa-copyright"></i>
+    &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
+    </span>
+  </div>
 </main>
 <%- include('footer') -%>

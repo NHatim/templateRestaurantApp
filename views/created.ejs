@@ -1,0 +1,53 @@
+<%- include('header'); -%>
+
+<main class="container">
+  <div class= "main-wrapper">
+    <button class= "up-down"><i class="fa fa-angle-up"></i></button>
+    <div class= "header header-indien">
+      <div class= "navbar">
+        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+       <ul>
+        <li><a href = "#">Restaurant</a></li>
+        <li><a href = "#">Livreur</a></li>
+        <li><a href = "#">Gestionnaire</a></li>
+        </ul>
+      </div>
+      <div class= "intro intro-restaurant">
+      <span id= "spn-recap">
+        <h1>Merci pour votre commande :  <span id="recap-nom"><%= nom %> </span></br>
+        </h1>
+      </span>
+    </div>
+    </div>
+    <div class= "service"><!-- div 2-->
+      <h1>R&eacute;capitulatif commande</h1>
+      <div class="recap">
+        <ul class="recap-ul">
+          <li>Nombre de repas commandé : <%= nombre %></li>
+          <li>Votre rue: <%= rue %></li>
+          <li>Votre num&eacute;ro de maison: <%= maison %></li>
+          <li>Votre num&eacute;ro de bo&icirc;te: <%= boite %></li>
+          <li>Votre code postal : <%= codePostal %></li>
+          <li>Votre commune : <%= commune %></li>
+          <li>Nom du restaurant :<%= restaurant %> </li>
+          <li>Votre plat :<%= plat %> </li>
+        </ul>
+      </div>
+
+    </div>
+    <div class= "footer"><!-- div 3-->
+      <div class= "logo"></div>
+      <div class= "general">
+        <ul>
+          <li><a href= "https://github.com/NHatim">GitHub</a></li>
+          <li><a href= "mailto:hatim.naimi@gmail.com">Contactez-moi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span id= "spn-4"><i class= "fa fa-copyright"></i>
+    &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
+    </span>
+  </div>
+</main>
+<%- include('footer') -%>

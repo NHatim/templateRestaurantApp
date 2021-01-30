@@ -1,0 +1,80 @@
+<%- include('header'); -%>
+
+<main class="container">
+  <div class= "main-wrapper">
+    <button class= "up-down"><i class="fa fa-angle-up"></i></button>
+    <div class= "header header-commande">
+      <div class= "navbar">
+        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+      </div>
+    </div>
+    <div class= "service">
+      <h1>Formulaire commande</h1>
+      <form method="POST" action="/commande" class="needs-validation" novalidate>
+        <div class="row">
+          <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Nom et Pr&eacute;nom</label>
+            <input name = "nom"type="text" class="form-control" id="validationCustom01" placeholder="Naimi Hatim" required>
+          </div>
+          <div class="col-sm-2 mb-1">
+            <label for="validationCustom02">Nombre de repas</label>
+            <input name="nombre"type="number" class="form-control" id="validationCustom02"  min="1" max="20" required>
+          </div>
+          <div class="col-sm-5 mb-3">
+            <label for="validationCustom03">Rue</label>
+            <input name="rue" type="text" class="form-control" id="validationCustom03" placeholder="Rue picard" required>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-2 mb-3">
+            <label for="validationCustom04">Num&eacute;ro de maison</label>
+            <input name="maison"type="number" class="form-control" id="validationCustom04" placeholder="37" optional>
+          </div>
+          <div class="col-sm-2 mb-3">
+            <label for="validationCustom05">Num&eacute;ro de bo&icirc;te</label>
+            <input name="boite" type="number" class="form-control" id="validationCustom05" placeholder="1" optional>
+
+          </div>
+          <div class="col-sm-2 mb-3">
+            <label for="validationCustom05">Code postal</label>
+            <input name="codePostal" type="number" class="form-control" id="validationCustom05" placeholder="1180" min="1000" max="9999" required>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <label for="validationCustom05">Commune</label>
+            <input name="commune" type="text" class="form-control" id="validationCustom05" placeholder="Uccle" required>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <label for="validationCustom05">Restaurant</label>
+            <input name="restaurant-selected" type="text" class="form-control" id="validationCustom05" placeholder="" value="<%= restaurant %>" disabled>
+          </div>
+          <div class="col-sm-4 mb-3">
+            <label for="validationCustom05">Plat commandé</label>
+            <input name="restaurant-selected" type="text" class="form-control" id="validationCustom05" placeholder="" value="<%= plat %>" disabled>
+          </div>
+        </div>
+        <div class="button-group">
+          <button type="submit" class="btn btn-success">Confirmation</button>
+        </div>
+      </form>
+
+      <a href ="/"><button type="reset" class="btn btn-danger btn-annulation">Annulation</button></a>
+
+
+      </div>
+    </div>
+    <div class= "footer"><!-- div 3-->
+      <div class= "logo"></div>
+      <div class= "general">
+        <ul>
+          <li><a href= "https://github.com/NHatim">GitHub</a></li>
+          <li><a href= "mailto:hatim.naimi@gmail.com">Contactez-moi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span id= "spn-4"><i class= "fa fa-copyright"></i>
+    &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
+    </span>
+  </div>
+</main>
+<%- include('footer') -%>

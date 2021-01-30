@@ -1,0 +1,49 @@
+<%- include('header'); -%>
+
+<main class="container">
+  <div class= "main-wrapper">
+    <button class= "up-down"><i class="fa fa-angle-up"></i></button>
+    <div class= "header header-mexicain">
+      <div class= "navbar">
+        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+      </div>
+      <div class= "intro intro-restaurant">
+      <span id= "spn-1">
+        <h1> Restaurant : Mexicain</br></br>
+        </h1>
+      </span>
+    </div>
+    </div>
+    <div class= "service"><!-- div 2-->
+      <h1>Liste restaurant</h1>
+      <div class="liste-restaurant">
+        <form action="/restaurant" method="post">
+          <label for="restaurant">Choose a pet:</label>
+          <select name="pets" id="pet-select">
+              <option value="">--Please choose an option--</option>
+              <option value="dog">Dog</option>
+              <option value="cat">Cat</option>
+              <option value="hamster">Hamster</option>
+              <option value="parrot">Parrot</option>
+              <option value="spider">Spider</option>
+              <option value="goldfish">Goldfish</option>
+          </select>
+      </form>
+      </div>
+    </div>
+    <div class= "footer"><!-- div 3-->
+      <div class= "logo"></div>
+      <div class= "general">
+        <ul>
+          <li><a href= "https://github.com/NHatim">GitHub</a></li>
+          <li><a href= "mailto:hatim.naimi@gmail.com">Contactez-moi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span id= "spn-4"><i class= "fa fa-copyright"></i>
+    &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
+    </span>
+  </div>
+</main>
+<%- include('footer') -%>

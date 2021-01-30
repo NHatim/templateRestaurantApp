@@ -1,0 +1,49 @@
+<%- include('header'); -%>
+
+<main class="container">
+  <div class= "main-wrapper">
+    <button class= "up-down"><i class="fa fa-angle-up"></i></button>
+    <div class= "header header-snacks">
+      <div class= "navbar">
+        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+      </div>
+      <div class= "intro intro-restaurant">
+      <span id= "spn-1">
+        <h1> Restaurant : Snacks</br></br>
+        </h1>
+      </span>
+    </div>
+    </div>
+    <div class= "service"><!-- div 2-->
+      <h1>Liste restaurant</h1>
+      <div class="liste-restaurant">
+        <form action="/snacks" method="post">
+        <ul>
+          <li>Restaurant Chez Lilicup : Cupcake du jour <br/>Cupcake M&eacute;t&eacute;orite</br>
+            <button name="restaurant" type="submit"  class="btn btn-outline-danger btn-mario" value="Chez Lilicup : Cupcake M&eacute;t&eacute;orite">Commander</button></li>
+          <li>Restaurant Au terroir : Plat du jour <br/>Cheese-cake au speculoos belge </br>
+            <button name="restaurant" type="submit"  class="btn btn-outline-danger btn-luigi"value="Au terroir : Cheese-cake au speculoos belge">Commander</button></li>
+          <li>Restaurant Snack Twins : Plat du jour <br/>Assiette de 7 saveurs</br>
+            <button name="restaurant" type="submit"  class="btn btn-outline-danger btn-wario" value="Snack Twins : Assiette de 7 saveurs">Commander</button></li>
+          <li>Restaurant Dominion : Plat du jour <br/>Gauffre li&eacute;geoise caramel et vanille </br>
+            <button name="restaurant" type="submit"  class="btn btn-outline-danger btn-waluigi" value="Dominion : Gauffre li&eacute;geoise caramel et vanille">Commander</button></li>
+        </ul>
+      </form>
+      </div>
+    </div>
+    <div class= "footer"><!-- div 3-->
+      <div class= "logo"></div>
+      <div class= "general">
+        <ul>
+          <li><a href= "https://github.com/NHatim">GitHub</a></li>
+          <li><a href= "mailto:hatim.naimi@gmail.com">Contactez-moi</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <span id= "spn-4"><i class= "fa fa-copyright"></i>
+    &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
+    </span>
+  </div>
+</main>
+<%- include('footer') -%>
