@@ -3,11 +3,11 @@ const router = new express.Router();
 const { body, validationResult } = require('express-validator');
 const createError = require('http-errors');
 const Commande = require('../class/commande.js');
-const Restaurant = require('../class/restaurant.js')
+const Restaurant = require('../class/restaurant');
+const loadRestaurants = Restaurant.loadRestaurants();
 let restaurant = "";
 let numCommande = 1;
 const tabCommande = [];
-const tabRestaurant = [];
 
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Eat It | Livraison de repas' });
@@ -71,17 +71,23 @@ router.post('/commande',
   } else {
     const date = new Date().toString().slice(0,15);
     const heure = new Date().toString().slice(16,24);
-    const commande = new Commande(numCommande, req.body.nom, req.body.nombre, req.body.rue, req.body.maison, req.body.boite, req.body.codePostal, req.body.commune, date, heure);
+    const nomResto = restaurant[0];
+    const platResto = restaurant[1];
+
+    const restoCommande = loadRestaurants.find(el => nomResto.trim() === el.nom)
+    const commande = new Commande(numCommande, req.body.nom, req.body.nombre, req.body.rue, req.body.maison, req.body.boite, req.body.codePostal, req.body.commune, restoCommande ,  date, heure);
+    commande.etatCommande = "aprep"
     tabCommande.push(commande);
     numCommande++;
+    console.log(nomResto);
+    console.log(platResto);
     res.render('created', {title: 'Eat It | Confirmation', nom : req.body.nom,
     nombre : req.body.nombre, rue : req.body.rue,
     maison : req.body.maison, boite : req.body.boite,
-    codePostal : req.body.codePostal, commune : req.body.commune, restaurant : restaurant[0], plat : restaurant[1].slice(13,)});
-    console.log(date);
-    console.log(heure);
+    codePostal : req.body.codePostal, commune : req.body.commune, restaurant : nomResto, plat : platResto});
     console.log(commande)
     console.log('Created');
+
   }
 
 })

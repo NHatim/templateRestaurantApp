@@ -85,6 +85,49 @@ a{
   text-decoration: none;
   color: inherit;
 }
+
+.recap ul{
+  list-style-type: none;
+
+}
+
+.recap ul li{
+  font-weight: bold;
+}
+
+.footer ul {
+  list-style: none;
+}
+.footer a {
+  text-decoration: none;
+  color: #f8db9a;
+}
+.footer a:hover {
+  text-decoration: none;
+  text-shadow: 3px 3px 1px #5a3e1c;
+}
+.button-group button{
+
+  margin-left: 1.5rem;
+
+}
+
+.liste-restaurant ul{
+  padding-top: 2rem;
+  display: flex;
+  list-style-type: none;
+  text-align: center;
+  font-weight: bold;
+}
+.liste-restaurant ul li{
+  padding-left: 4em;
+}
+
+.liste-restaurant ul li button{
+  margin-top: 2em;
+  font-weight: bold;
+
+}
 .header {
   background-image: url("../images/burger.jpg");
   background-position: center;
@@ -100,6 +143,7 @@ a{
 
 .header-commande{
   background-image: url("../images/commande.jpg");
+  background-size: 100%;
 }
 
 .header-indien{
@@ -110,6 +154,9 @@ a{
 }
 .header-snacks{
   background-image: url("../images/snacks.jpg");
+}
+.header-restaurant{
+  background-image: url("../images/restaurant.jpg");
 }
 
 
@@ -150,6 +197,8 @@ a{
 .navbar li a:hover::after {
   width: 100%;
 }
+
+
 
 .intro {
   display: flex;
@@ -235,6 +284,21 @@ margin: auto;
   color: #a2513d;
 }
 
+.liste-restauration{
+
+  padding-left: 40% ;
+  padding-top: 5%;
+
+
+  display: inline-block;
+}
+
+.liste-restauration button{
+
+  margin-top: 10%;
+
+}
+
 
 
 .service {
@@ -246,15 +310,6 @@ margin: auto;
 .recap{
   align-items: center;
 }
-.recap ul{
-  list-style-type: none;
-
-}
-
-.recap ul li{
-  font-weight: bold;
-}
-
 
 .service h1 {
   text-align: center;
@@ -262,6 +317,12 @@ margin: auto;
   font-weight: bold;
   margin-top: 2rem;
 }
+
+.confirm-commande{
+  color: #c0c0c0;
+}
+
+
 .service .image {
   display: flex;
   flex-wrap: wrap;
@@ -355,39 +416,20 @@ margin: auto;
   font-size: 0;
 }
 
-.liste-restaurant ul{
-  padding-top: 2rem;
-  display: flex;
-  list-style-type: none;
-  text-align: center;
-  font-weight: bold;
-}
-.liste-restaurant ul li{
-  padding-left: 4em;
-}
 
-.liste-restaurant ul li button{
-  margin-top: 2em;
-  font-weight: bold;
-
-}
 
 .button-group{
   margin-top: 1.5rem;
   margin-left: 1.5rem;
 
 }
-.button-group button{
 
-  margin-left: 1.5rem;
-
-}
 
 .btn-annulation{
   display: inline-block;
   position: absolute;
   left: 25%;
-  bottom: 47%;
+  bottom: 43.5%;
 }
 
 
@@ -399,17 +441,7 @@ margin: auto;
   padding: 5px;
   background-image: url("https://images.unsplash.com/photo-1510148199876-8a856ee41d42?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a82c3751ed73cbbd31bbaef3d7233a83&auto=format&fit=crop&w=750&q=80");
 }
-.footer ul {
-  list-style: none;
-}
-.footer a {
-  text-decoration: none;
-  color: #f8db9a;
-}
-.footer a:hover {
-  text-decoration: none;
-  text-shadow: 3px 3px 1px #5a3e1c;
-}
+
 .footer .general {
   color: #f8db9a;
   position: relative;

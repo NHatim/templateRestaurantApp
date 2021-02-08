@@ -1,3 +1,4 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
  class Restaurant {
   constructor(nom,plat,adresse) {
     this.nom = nom;
@@ -47,3 +48,24 @@ function loadRestaurants(){
 module.exports.Restaurant = Restaurant;
 module.exports.loadRestaurants = loadRestaurants;
 
+
+},{}],2:[function(require,module,exports){
+
+const Restaurant = require('/home/hatim/Bureau/projet-NHatim/class/restaurant.js');
+const loadRestaurants = Restaurant.loadRestaurants();
+let restaurantDropdown = document.getElementById('liste-restauration');
+
+
+loadRestaurants.forEach(el => {
+let optionEl = document.createElement('option');
+optionEl.text = el.nom;
+optionEl.value = el.nom;
+restaurantDropdown.appendChild(optionEl);
+})
+
+console.log(document.getElementById('liste-restauration').selectedIndex)
+
+
+
+
+},{"/home/hatim/Bureau/projet-NHatim/class/restaurant.js":1}]},{},[2]);

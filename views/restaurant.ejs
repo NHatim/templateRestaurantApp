@@ -1,33 +1,26 @@
 <%- include('header'); -%>
-
+<script src="/js/bundle.js" defer></script>
 <main class="container">
   <div class= "main-wrapper">
     <button class= "up-down"><i class="fa fa-angle-up"></i></button>
-    <div class= "header header-mexicain">
+    <div class= "header header-restaurant">
       <div class= "navbar">
         <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
       </div>
       <div class= "intro intro-restaurant">
       <span id= "spn-1">
-        <h1> Restaurant : Mexicain</br></br>
+        <h1> Veuillez vous connecter &agrave; votre restaurant</br></br>
         </h1>
       </span>
     </div>
     </div>
     <div class= "service"><!-- div 2-->
       <h1>Liste restaurant</h1>
-      <div class="liste-restaurant">
+      <div class="liste-restauration">
         <form action="/restaurant" method="post">
-          <label for="restaurant">Choose a pet:</label>
-          <select name="pets" id="pet-select">
-              <option value="">--Please choose an option--</option>
-              <option value="dog">Dog</option>
-              <option value="cat">Cat</option>
-              <option value="hamster">Hamster</option>
-              <option value="parrot">Parrot</option>
-              <option value="spider">Spider</option>
-              <option value="goldfish">Goldfish</option>
+          <select class="form-select" id="liste-restauration" aria-label="liste-restaurant">
           </select>
+          <button type="submit" class="btn btn-primary">Connexion</button>
       </form>
       </div>
     </div>
