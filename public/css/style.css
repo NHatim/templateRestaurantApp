@@ -128,6 +128,26 @@ a{
   font-weight: bold;
 
 }
+
+
+.liste-commande-aprep{
+
+
+  padding-left: 25%;
+  padding-top: 2%;
+}
+
+.liste-commande-aprep ul li{
+
+  padding: .2rem;
+
+}
+
+.liste-commande-aprep ul li button{
+
+  margin-left: 1.5rem;
+
+}
 .header {
   background-image: url("../images/burger.jpg");
   background-position: center;
@@ -158,6 +178,12 @@ a{
 .header-restaurant{
   background-image: url("../images/restaurant.jpg");
 }
+
+.header-restauration{
+  background-image: url("../images/order.jpg");
+  background-position: 40% 30%
+}
+
 
 
 .header .navbar {
@@ -284,7 +310,7 @@ margin: auto;
   color: #a2513d;
 }
 
-.liste-restauration{
+.restaurateur{
 
   padding-left: 40% ;
   padding-top: 5%;
@@ -293,7 +319,7 @@ margin: auto;
   display: inline-block;
 }
 
-.liste-restauration button{
+.restaurateur button{
 
   margin-top: 10%;
 

@@ -69,13 +69,15 @@ router.post('/commande',
   if (!errors.isEmpty()) {
     next(createError(400));
   } else {
-    const date = new Date().toString().slice(0,15);
+    const date = new Date()
+    const options = { weekday: 'numeric', year: 'numeric', month: 'numeric', day: 'numeric' };
+
     const heure = new Date().toString().slice(16,24);
     const nomResto = restaurant[0];
     const platResto = restaurant[1];
 
     const restoCommande = loadRestaurants.find(el => nomResto.trim() === el.nom)
-    const commande = new Commande(numCommande, req.body.nom, req.body.nombre, req.body.rue, req.body.maison, req.body.boite, req.body.codePostal, req.body.commune, restoCommande ,  date, heure);
+    const commande = new Commande(numCommande, req.body.nom, req.body.nombre, req.body.rue, req.body.maison, req.body.boite, req.body.codePostal, req.body.commune, restoCommande ,  date.toLocaleDateString('fr-FR', options), heure);
     commande.etatCommande = "aprep"
     tabCommande.push(commande);
     numCommande++;
@@ -96,4 +98,5 @@ router.post('/commande',
 
 
 module.exports = router;
+module.exports.tabCommande = tabCommande;
 
