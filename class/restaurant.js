@@ -3,6 +3,8 @@
     this.nom = nom;
     this.plat = plat;
     this.adresse = adresse;
+    this.commandeTot = 0;
+    this.commandePrep = 0;
   }
 
 

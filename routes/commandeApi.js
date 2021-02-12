@@ -6,9 +6,11 @@ const Commande = require('../class/commande.js');
 const Restaurant = require('../class/restaurant');
 const loadRestaurants = Restaurant.loadRestaurants();
 let restaurant = "";
-let numCommande = 1;
+let numCommande = 2;
 const tabCommande = [];
-
+let premCom = new Commande(1,"Hatim",13,"Rue picard",3,1,"1180","Uccle", loadRestaurants[0],1,1)
+premCom.etatCommande = "aprep";
+tabCommande.push(premCom)
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Eat It | Livraison de repas' });
 });
@@ -70,15 +72,17 @@ router.post('/commande',
     next(createError(400));
   } else {
     const date = new Date()
-    const options = { weekday: 'numeric', year: 'numeric', month: 'numeric', day: 'numeric' };
+    const options = {year: 'numeric', month: 'numeric', day: 'numeric' };
 
     const heure = new Date().toString().slice(16,24);
     const nomResto = restaurant[0];
     const platResto = restaurant[1];
 
+    console.log(nomResto);
     const restoCommande = loadRestaurants.find(el => nomResto.trim() === el.nom)
     const commande = new Commande(numCommande, req.body.nom, req.body.nombre, req.body.rue, req.body.maison, req.body.boite, req.body.codePostal, req.body.commune, restoCommande ,  date.toLocaleDateString('fr-FR', options), heure);
     commande.etatCommande = "aprep"
+    commande.restaurant.commandeTot++;
     tabCommande.push(commande);
     numCommande++;
     console.log(nomResto);

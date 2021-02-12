@@ -6,6 +6,11 @@
     <div class= "header header-restauration">
       <div class= "navbar">
         <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+          <ul class="stats">
+            <li>Commande préparée(s) : <%= nbPret %></li>
+            <li>Commande restante(s) : <%= nbRestant %></li>
+            <li class="heure"></li>
+        </ul>
       </div>
       <div class= "intro intro-restaurant">
       <span id= "spn-1">
@@ -17,14 +22,17 @@
     <div class= "service"><!-- div 2-->
       <h1>Liste des commandes &agrave; pr&eacute;parer</h1>
       <div class="liste-commande-aprep">
+        <form onsubmit="return reponse" action="/restaurant/confirmation" method="POST">
         <ul>
           <% tableauCommande.forEach(element => { %>
-        <% if (element.restaurant.nom === restaurant) { %>
-         <li>Commande n°<%=element.numero%>, prise le <%=element.date%> à <%=element.heure %> Nombre Repas : <%=element.nbRepas %><button class="btn btn-success">Pr&ecirc;te</button></li>
-
-        <% } %>
+            <% if (element.restaurant.nom === restaurant && element.etatCommande === "aprep") { %>
+         <li nbRepas="<%=element.nbRepas %>"class="el-<%=element.numero%>">Commande n°<%=element.numero%>, prise le <%=element.date%> à
+          <%=element.heure %>, Nombre Repas : <%=element.nbRepas %>
+          <button name ="button"  type="submit" class="btn btn-success" value="<%=element.numero%>">Pr&ecirc;te</button></li>
+          <% } %>
           <% }) %>
         </ul>
+      </form>
       </div>
     </div>
     <div class= "footer"><!-- div 3-->

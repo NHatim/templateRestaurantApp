@@ -1,16 +1,22 @@
-const tabCom = require('../../routes/commandeApi');
 
-tabCom.tabCommande.forEach(element => {
-  if(element.restaurant.nom === req.body.restaurant.trim()){
-    const li = document.createElement('li');
-    const ul = document.querySelector('ul');
+let reponse = false;
+let btns = document.querySelectorAll('button');
+window.setInterval('refresh()', 10000);
 
-    li.textContent = element.nom;
+function refresh() {
+  window.location.href = window.location.href
+}
 
-    ul.appendChild
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    let li = document.querySelector(`.el-${btn.value}`)
+    reponse = confirm(`Voulez-vous confirmer la commande ${btn.value} avec le nombre de repas ${li.getAttribute('nbRepas')}`);
+  })
+})
 
-  }
 
-});
+
+
+
 
 

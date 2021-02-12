@@ -140,7 +140,12 @@ a{
 .liste-commande-aprep ul li{
 
   padding: .2rem;
+  list-style-type: none;
 
+}
+
+.none{
+  display: none;
 }
 
 .liste-commande-aprep ul li button{
@@ -182,6 +187,14 @@ a{
 .header-restauration{
   background-image: url("../images/order.jpg");
   background-position: 40% 30%
+}
+
+.stats{
+  display: inline-block;
+  padding: 10px;
+  text-transform: uppercase;
+  color: #ffffff;
+  text-decoration: none;
 }
 
 
@@ -455,7 +468,7 @@ margin: auto;
   display: inline-block;
   position: absolute;
   left: 25%;
-  bottom: 43.5%;
+  bottom: 47.1%;
 }
 
 
