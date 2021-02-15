@@ -103,4 +103,5 @@ router.post('/commande',
 
 module.exports = router;
 module.exports.tabCommande = tabCommande;
+module.exports.loadRestaurants = loadRestaurants;
 

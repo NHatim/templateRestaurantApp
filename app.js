@@ -6,7 +6,8 @@ const logger = require('morgan');
 
 
 const commandeRouter = require('./routes/commandeApi');
-const restaurantRouteur = require('./routes/restaurant')
+const restaurantRouter = require('./routes/restaurant');
+const livreurRouter = require('./routes/livreur');
 
 
 const app = express();
@@ -24,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use('/', commandeRouter);
-app.use('/restaurant', restaurantRouteur);
+app.use('/restaurant', restaurantRouter);
+app.use('/livreur', livreurRouter );
 
 
 
