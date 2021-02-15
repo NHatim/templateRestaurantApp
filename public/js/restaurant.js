@@ -1,6 +1,6 @@
 
-const Restaurant = require('/home/hatim/Bureau/projet-NHatim/class/restaurant.js');
-const loadRestaurants = Restaurant.loadRestaurants();
+const restaurant = require('/home/hatim/Bureau/projet-NHatim/class/restaurant.js');
+const loadRestaurants = restaurant.loadRestaurants();
 let restaurantDropdown = document.getElementById('liste-restauration');
 const li = document.createElement('li');
 const ul = document.querySelector('ul');

@@ -63,7 +63,7 @@ router.post('/commande',
   body('maison').trim().escape(),
   body('boite').trim().escape(),
   body('codePostal').trim().escape().isInt({min : 1000, max : 9999}),
-  body('commune').trim().escape().isAlpha(),
+  body('commune').trim().escape(),
 ],
 
 (req, res,next) =>{

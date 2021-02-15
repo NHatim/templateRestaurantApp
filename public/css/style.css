@@ -355,10 +355,6 @@ margin: auto;
   margin-left: 2.5em;
 }
 
-#map {
-  height: 400px;
-  width: 100%;
-}
 
 
 
@@ -514,6 +510,32 @@ margin: auto;
 }
 .footer span:hover {
   text-shadow: 2px 2px 1px #5a3e1c;
+}
+
+.livreur{
+  display: inline-block;
+  height: 800px;
+}
+
+.livreur .row{
+  margin-top: 5%;
+}
+
+
+.livreur ul li{
+  list-style-type: none;
+  width: 80%;
+  padding-left: 10%;
+
+}
+.livreur ul li button{
+  margin-left: 5%;
+}
+
+#map {
+  height: 500px;
+  width: 100%;
+  padding-left: 5%;
 }
 
 

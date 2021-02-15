@@ -14,26 +14,33 @@
         </span>
       </div>
     </div>
-    <div class= "service"><!-- div 2-->
+    <div class= "service livreur"><!-- div 2-->
       <h1>Liste de commandes pr&ecirc;te</h1>
-      <% tabRestaurant.forEach(element => { %>
-        <ul>
-          <% if (element.commandePrep > 0) { %>
-            <li>Restaurant <%= element.nom%> , Nombre commande : <%=element.commandePrep %>
-              <button name ="button"  type="submit" class="btn btn-success">Livrer</button></li>
-              <% } %>
-            </ul>
-            <% }) %>
+      <div class="row">
+        <div class="col">
+          <form action="/livreur/choix-restaurant" method="post">
+            <% tabRestaurant.forEach(element => { %>
+              <ul>
+                <% if (element.commandePrep > 0) { %>
+                  <li  geolocalisation-lat=" <%= element.geolocalisation.lat %> " geolocalisation-lng=" <%= element.geolocalisation.lng %> ">Restaurant <%= element.nom%> , Nombre commande : <%=element.commandePrep %>
+                    <button name ="button" value="<%= element.nom %> " type="submit" class="btn btn-success">Livrer</button></li>
+                    <% } %>
+                  </ul>
+                  <% }) %>
+                </form>
+              </div>
+              <div class="col">
+                <div id="map"></div>
+                <script
+                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgzsppydLqk_aKI4DIcG1uUkVwUhrsj7A&callback=initMap&libraries=&v=weekly"
+                async
+                ></script>
+              </div>
+            </div>
           </div>
 
-          <div id="map"></div>
 
-          <!-- Async script executes immediately and must be after any DOM elements used in callback. -->
-          <script
-            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgzsppydLqk_aKI4DIcG1uUkVwUhrsj7A&callback=initMap&libraries=&v=weekly"
-            async
-          ></script>
-          <div class= "footer"><!-- div 3-->
+          <div class= "footer">
             <div class= "logo"></div>
             <div class= "general">
               <ul>
