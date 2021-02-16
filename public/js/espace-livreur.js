@@ -6,7 +6,7 @@ function initMap() {
 
 
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 13,
+    zoom: 10,
     center: bruxelles,
   });
   // The marker, positioned at Uluru

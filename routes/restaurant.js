@@ -14,7 +14,6 @@ router.post('/liste', (req, res, next) => {
   tableauCommande : tabCom.tabCommande,
   nbPret : findResto ? findResto.restaurant.commandePrep : 0 ,
   nbRestant : findResto ? (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep) : 0 });
-  console.log(tabCom.tabCommande);
 
 });
 

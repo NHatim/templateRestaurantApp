@@ -3,7 +3,6 @@ const router = new express.Router();
 const tabCom = require('./commandeApi');
 const {body, validationResult} = require('express-validator');
 const session = require('express-session');
-const { loadRestaurants } = require('../class/restaurant');
 
 
 router.use(session({
@@ -28,9 +27,6 @@ router.post('/connexion',
     console.log()
     req.session.nom = req.body.nom;
     req.session.prenom = req.body.prenom;
-    console.log(req.session.nom);
-    console.log(req.session.prenom);
-    console.log(tabCom.loadRestaurants)
     res.render('espace-livreur', { title: 'Eat It | Section Livreur', nom : req.session.nom, prenom : req.session.prenom, tabRestaurant : tabCom.loadRestaurants });
   }
 
@@ -38,10 +34,16 @@ router.post('/connexion',
 
 
 
-router.get('/', (req,res) =>{
+router.get('/', (req,res,next) =>{
 
     res.render('livreur', { title: 'Eat It | Section Livreur' });
 
 })
 
-module.exports = router,session,loadRestaurants;
+router.post('/choix-restaurant', (req,res,next) =>{
+
+  res.render('livreur-restaurant', { title: 'Eat It | Section Livreur', nom : req.session.nom, prenom : req.session.prenom });
+
+})
+
+module.exports = router,session;
