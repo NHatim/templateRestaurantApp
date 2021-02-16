@@ -326,38 +326,22 @@ margin: auto;
 .intro .search button:hover {
   color: #a2513d;
 }
-
 .restaurateur{
-
   padding-left: 40% ;
   padding-top: 5%;
-
-
   display: inline-block;
 }
-
 .restaurateur button{
-
   margin-top: 10%;
-
 }
-
  .connexion-livreur{
-
   margin-top: 2em;
   margin-left: 30em;
-
 }
-
-
 .connexion-livreur button{
   margin-top: 1em;
   margin-left: 2.5em;
 }
-
-
-
-
 .service {
   background-color: #e8d4af;
   height: 400px;
@@ -376,12 +360,9 @@ margin: auto;
   font-weight: bold;
   margin-top: 2rem;
 }
-
 .confirm-commande{
   color: #c0c0c0;
 }
-
-
 .service .image {
   display: flex;
   flex-wrap: wrap;
@@ -457,8 +438,6 @@ margin: auto;
   left: 28%;
   font-size: 30px;
 }
-
-
 .item {
   position: relative;
   z-index: 2;
@@ -529,6 +508,19 @@ margin: auto;
 }
 .livreur ul li button{
   margin-left: 5%;
+}
+
+.livreur-restaurant{
+  list-style-type: none;
+  padding-left: 2%;
+}
+
+.livreur-commande{
+  margin-top: 10%;
+}
+
+.livreur-btn {
+  margin: 5%;
 }
 
 #map {

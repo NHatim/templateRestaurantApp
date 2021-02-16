@@ -6,7 +6,7 @@ const Commande = require('../class/commande.js');
 const Restaurant = require('../class/restaurant');
 const loadRestaurants = Restaurant.loadRestaurants();
 let restaurant = "";
-let numCommande = 2;
+let numCommande = 1;
 const tabCommande = [];
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Eat It | Livraison de repas' });
@@ -83,9 +83,7 @@ router.post('/commande',
     nombre : req.body.nombre, rue : req.body.rue,
     maison : req.body.maison, boite : req.body.boite,
     codePostal : req.body.codePostal, commune : req.body.commune, restaurant : nomResto, plat : platResto});
-
   }
-
 })
 
 
