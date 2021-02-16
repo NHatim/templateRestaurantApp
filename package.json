@@ -19,7 +19,8 @@
     "express-validator": "^6.9.2",
     "http-errors": "^1.8.0",
     "livereload": "^0.9.1",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "node-geocoder": "^3.27.0"
   },
   "devDependencies": {
     "cross-env": "^7.0.3",
