@@ -86,9 +86,12 @@ a{
   color: inherit;
 }
 
-.recap ul{
-  list-style-type: none;
+.recap{
+  height: 500px;
+}
 
+.recap-ul{
+  list-style-type: none;
 }
 
 .recap ul li{
@@ -348,9 +351,9 @@ margin: auto;
   align-items: center;
 }
 
-
-
-.recap{
+.recap {
+  background-color: #e8d4af;
+  height: 600px;
   align-items: center;
 }
 
@@ -502,8 +505,12 @@ margin: auto;
 
 
 .livreur ul li{
+
   list-style-type: none;
   width: 80%;
+  padding-left: 2%;
+  padding-top: 2%;
+  font-weight: bold;
 
 }
 .livreur ul li button{

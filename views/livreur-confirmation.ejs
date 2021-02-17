@@ -1,11 +1,11 @@
 <%- include('header'); -%>
-<script src="/js/espace-livreur.js"defer></script>
+<script src="/js/livreur-confirmation.js"defer></script>
 <main class="container">
   <div class= "main-wrapper">
     <button class= "up-down"><i class="fa fa-angle-up"></i></button>
     <div class= "header header-livreur">
       <div class= "navbar">
-        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+        <a href="/"><span id= "logo-name-1">Eat</span> <span id="logo-name-2">It </span></a>
       </div>
       <div class= "intro intro-restaurant">
         <span id= "spn-1">
@@ -15,12 +15,17 @@
       </div>
     </div>
     <div class= "service livreur"><!-- div 2-->
-      <h1>Liste de commandes pr&ecirc;te</h1>
+      <h1 class="">Liste de commandes pr&ecirc;te</h1>
       <div class="row">
         <div class="col">
-          <li class="livreur-restaurant">Nom du client : <span class="maj"><%= commandeClient.nom%></span> , adresse : <%= commandeClient.rue %> n° <%= commandeClient.maison %>, <%=commandeClient.codePostal%> à <%=commandeClient.commune %>  </li>
-          <li class="livreur-restaurant"> Nombre de repas à livrer : <%= commandeClient.nbRepas %></li>
+          <li class="livreur-restaurant geolocalisation" geolocalisation-lat="<%=commandeClient.geolocalisation.lat%>" geolocalisation-lng="<%=commandeClient.geolocalisation.lng%>" >Nom du client : <span class="maj"><%= commandeClient.nom%> <%= commandeClient.prenom%></span>  </li>
+          <li class="livreur-restaurant">Adresse : <%= commandeClient.adresse %></li>
+          <li class="livreur-restaurant">Nombre de repas à livrer : <%= commandeClient.nbRepas %></li>
+          <form onsubmit="return reponse" action="/livreur/commande-livrer" method="POST">
+          <button type="submit" class="btn btn-success confirmation">Confirmation livraison</button>
+          </form>
         </div>
+
         <div class="col">
           <div id="map"></div>
           <script

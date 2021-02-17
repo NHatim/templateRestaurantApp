@@ -21,8 +21,8 @@
           <form action="/livreur/choix-restaurant" method="post">
             <% tabRestaurant.forEach(element => { %>
               <ul>
-                <% if (element.commandePrep > 0) { %>
-                  <li  geolocalisation-lat="<%= element.geolocalisation.lat %>" geolocalisation-lng="<%= element.geolocalisation.lng %>">Restaurant <%= element.nom%> , Nombre commande : <%=element.commandePrep %>
+                <% if (element.commandePrep > 0 && element.commandePrep > element.commandeLivrer) { %>
+                  <li  geolocalisation-lat="<%= element.geolocalisation.lat %>" geolocalisation-lng="<%= element.geolocalisation.lng %>">Restaurant <%= element.nom%> , Nombre commande : <%=element.commandePrep - element.commandeLivrer %>
                     <button name ="restaurant" value="<%= element.nom %>" type="submit" class="btn btn-success">Livrer</button></li>
                     <% } %>
                   </ul>

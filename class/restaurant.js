@@ -6,6 +6,7 @@
     this.geolocalisation = geolocalisation;
     this.commandeTot = 0;
     this.commandePrep = 0;
+    this.commandeLivrer = 0;
 
   }
 

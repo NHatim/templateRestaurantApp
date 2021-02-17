@@ -12,27 +12,31 @@
       <h1>Formulaire commande</h1>
       <form method="POST" action="/commande" class="needs-validation" novalidate>
         <div class="row">
-          <div class="col-md-4 mb-3">
-            <label for="validationCustom01">Nom et Pr&eacute;nom</label>
-            <input name = "nom"type="text" class="form-control" id="validationCustom01" placeholder="Naimi Hatim" required>
+          <div class="col-md-2 mb-3">
+            <label for="validationCustom01">Nom</label>
+            <input name = "nom"type="text" class="form-control" id="validationCustom01" placeholder="Doe" required>
+          </div>
+          <div class="col-md-2 mb-3">
+            <label for="validationCustom01">Pr&eacute;nom</label>
+            <input name= "prenom"type="text" class="form-control" id="validationCustom01" placeholder="John" required>
           </div>
           <div class="col-sm-2 mb-1">
             <label for="validationCustom02">Nombre de repas</label>
-            <input name="nombre"type="number" class="form-control" id="validationCustom02"  min="1" max="20" required>
+            <input name="nombre"type="number" class="form-control" id="validationCustom02"  placeholder="1" min="1" max="20" required>
           </div>
-          <div class="col-sm-5 mb-3">
+          <div class="col-sm-4 mb-3">
             <label for="validationCustom03">Rue</label>
-            <input name="rue" type="text" class="form-control" id="validationCustom03" placeholder="Rue picard" required>
+            <input name="rue" type="text" class="form-control" id="validationCustom03" placeholder="Rue du chamois" required>
           </div>
         </div>
         <div class="row">
           <div class="col-sm-2 mb-3">
             <label for="validationCustom04">Num&eacute;ro de maison</label>
-            <input name="maison"type="number" class="form-control" id="validationCustom04" placeholder="37" optional>
+            <input name="maison"type="number" class="form-control" id="validationCustom04" placeholder="31" optional>
           </div>
           <div class="col-sm-2 mb-3">
             <label for="validationCustom05">Num&eacute;ro de bo&icirc;te</label>
-            <input name="boite" type="number" class="form-control" id="validationCustom05" placeholder="1" optional>
+            <input name="boite" type="number" class="form-control" id="validationCustom05" placeholder="" optional>
 
           </div>
           <div class="col-sm-2 mb-3">

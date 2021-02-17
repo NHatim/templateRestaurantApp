@@ -1,13 +1,11 @@
 module.exports = class Commande {
-  constructor(numero,nom,nbRepas,rue,maison,boite,codePostal,commune,restaurant,date,heure) {
+  constructor(numero,nom, prenom,nbRepas,adresse,restaurant,date,heure) {
     this.numero = numero;
     this.nom = nom;
+    this.prenom = prenom;
     this.nbRepas = nbRepas;
-    this.rue = rue;
-    this.maison = maison;
-    this.boite = boite;
-    this.codePostal = codePostal;
-    this.commune = commune;
+    this.adresse = adresse;
+    this.geolocalisation = undefined;
     this.restaurant = restaurant;
     this.date = date;
     this.heure = heure;

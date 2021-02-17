@@ -3,10 +3,10 @@ const router = new express.Router();
 const commandeApi = require('./commandeApi');
 const {body, validationResult} = require('express-validator');
 const session = require('express-session');
-
+let commandeClient;
 
 router.use(session({
-  secret : 'yourSecret',
+  secret : 'secret',
   resave : false,
   saveUninitialized : false,
 }));
@@ -28,7 +28,7 @@ router.post('/connexion',
   } else {
     req.session.nom = req.body.nom;
     req.session.prenom = req.body.prenom;
-    res.render('espace-livreur', { title: 'Eat It | Section Livreur', nom : req.session.nom, prenom : req.session.prenom, tabRestaurant : commandeApi.loadRestaurants });
+    res.render('espace-livreur', { title: 'Eat It | Section Livreur liste restaurant', nom : req.session.nom, prenom : req.session.prenom, tabRestaurant : commandeApi.loadRestaurants });
   }
 })
 
@@ -41,12 +41,19 @@ router.post('/choix-restaurant', (req,res,next) =>{
       tabNumCom.push(element.numero);
     }
   })
-  res.render('livreur-restaurant', { title: 'Eat It | Section Livreur', nom : req.session.nom, prenom : req.session.prenom, resto : findResto, tabCommande : commandeApi.tabCommande, tabNumCom : tabNumCom });
+  res.render('livreur-restaurant', { title: 'Eat It | Section Livreur confirmation restaurant', nom : req.session.nom, prenom : req.session.prenom, resto : findResto, tabCommande : commandeApi.tabCommande, tabNumCom : tabNumCom });
 });
 
 router.post('/confirmation-commande',(req,res,next) =>{
-  let commandeClient = commandeApi.tabCommande.find(element => element.numero === parseInt(req.body.commande));
-  res.render('livreur-confirmation', { title: 'Eat It | Section Livreur', commandeClient : commandeClient});
+  commandeClient = commandeApi.tabCommande.find(element => element.numero === parseInt(req.body.commande));
+  res.render('livreur-confirmation', { title: 'Eat It | Section Livreur confirmation commande', commandeClient : commandeClient});
+})
+
+router.post('/commande-livrer', (req,res,next) =>{
+  commandeClient.etatCommande = "livrer";
+  commandeClient.restaurant.commandeLivrer++;
+  console.log(commandeClient)
+  res.render('espace-livreur', {title: 'Eat It | Section Livreur liste restaurant', nom : req.session.nom, prenom : req.session.prenom, tabRestaurant : commandeApi.loadRestaurants})
 })
 
 module.exports = router,session;
