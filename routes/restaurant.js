@@ -42,7 +42,9 @@ router.get('/confirmation', (req,res,next) =>{
   restaurant : findResto.restaurant.nom,
   tableauCommande : tabCom.tabCommande,
   nbPret : findResto.restaurant.commandePrep,
-  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep) })
+  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
+  nbLivrer : findResto.restaurant.nbLivrer})
+
 })
 
 
@@ -51,7 +53,8 @@ router.get('/liste', (req, res, next) => {
   restaurant : findResto.restaurant.nom,
   tableauCommande : tabCom.tabCommande,
   nbPret : findResto.restaurant.commandePrep,
-  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep) });
+  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
+  nbLivrer : findResto.restaurant.nbLivrer });
 });
 
 
