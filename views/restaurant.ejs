@@ -1,5 +1,4 @@
 <%- include('header'); -%>
-<script src="/js/bundle.js" defer></script>
 <main class="container">
   <div class= "main-wrapper">
     <button class= "up-down"><i class="fa fa-angle-up"></i></button>
@@ -19,6 +18,9 @@
       <div class="restaurateur">
         <form action="/restaurant/liste" method="post">
           <select class="form-select" id="liste-restauration" aria-label="liste-restaurant" name="restaurant">
+            <% restaurant.forEach(element => { %>
+              <option value="<%=element.nom %>"><%= element.nom %></option>
+            <% }) %>
           </select>
           <button type="submit" class="btn btn-primary connexion">Connexion</button>
       </form>

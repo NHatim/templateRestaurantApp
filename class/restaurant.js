@@ -1,3 +1,7 @@
+const fs = require('fs')
+const fileContents = fs.readFileSync(__dirname + '/restaurant.json', 'utf8')
+
+
  class Restaurant {
   constructor(nom,plat,adresse,geolocalisation) {
     this.nom = nom;
@@ -12,6 +16,12 @@
 
 
 };
+
+function loadRestaurantsJSON(){
+const tabResto = JSON.parse(fileContents);
+return tabResto;
+
+}
 
 function loadRestaurants(){
   const tabResto =[];
@@ -51,4 +61,5 @@ function loadRestaurants(){
 
 module.exports.Restaurant = Restaurant;
 module.exports.loadRestaurants = loadRestaurants;
+module.exports.loadRestaurantsJSON = loadRestaurantsJSON;
 

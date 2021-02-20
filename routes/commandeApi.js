@@ -3,9 +3,23 @@ const router = new express.Router();
 const { body, validationResult } = require('express-validator');
 const createError = require('http-errors');
 const Commande = require('../class/commande.js');
-const Restaurant = require('../class/restaurant');
-const loadRestaurants = Restaurant.loadRestaurants();
+const fs = require('fs');
 const NodeGeocoder = require('node-geocoder');
+const loadRestaurants = []
+fs.readFile('/home/hatim/Bureau/projet-NHatim/class/restaurant.json', 'utf8', (err, fileContents) => {
+
+    const data = JSON.parse(fileContents);
+    const mesRestos = []
+    for (const geolocalisation in data) {
+      if (Object.hasOwnProperty.call(data, geolocalisation)) {
+        const element = data[geolocalisation];
+       mesRestos.push(element);
+      }
+    }
+    for (const element of mesRestos[0]) {
+        loadRestaurants.push(element);
+    }
+  })
 
 const options = {
   provider: 'google',
@@ -83,7 +97,7 @@ async (req, res,next) =>{
     });
     tabCommande.push(commande);
     numCommande++;
-    console.log(commande.geolocalisation);
+    console.log(commande);
     res.render('created', {title: 'Eat It | Confirmation', nom : commande.nom, prenom : commande.prenom,
     nombre : commande.nbRepas, adresse : commande.adresse, restaurant : nomResto, plat : platResto, geolocalisation : commande.geolocalisation});
   }

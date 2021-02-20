@@ -4,7 +4,7 @@ const tabCom = require('./commandeApi');
 let findResto;
 /* GET users listing. */
 router.get('/', (req, res, next) => {
-  res.render('restaurant', {title: 'Eat It | Section restaurateur'});
+  res.render('restaurant', {title: 'Eat It | Section restaurateur', restaurant : tabCom.loadRestaurants});
 });
 
 router.post('/liste', (req, res, next) => {
@@ -13,7 +13,8 @@ router.post('/liste', (req, res, next) => {
   restaurant : findResto ? findResto.restaurant.nom : req.body.restaurant ,
   tableauCommande : tabCom.tabCommande,
   nbPret : findResto ? findResto.restaurant.commandePrep : 0 ,
-  nbRestant : findResto ? (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep) : 0 });
+  nbRestant : findResto ? (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep) : 0,
+  nbLivrer : findResto ? findResto.restaurant.commandeLivrer : 0 });
 
 });
 
@@ -33,7 +34,9 @@ router.post('/confirmation', (req, res, next) => {
   restaurant : findResto.restaurant.nom,
   tableauCommande : tabCom.tabCommande,
   nbPret : findResto.restaurant.commandePrep,
-  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep) });
+  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
+  nbLivrer : findResto.restaurant.commandeLivrer });
+
   console.log(tabCom.tabCommande);
 });
 
@@ -43,7 +46,7 @@ router.get('/confirmation', (req,res,next) =>{
   tableauCommande : tabCom.tabCommande,
   nbPret : findResto.restaurant.commandePrep,
   nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
-  nbLivrer : findResto.restaurant.nbLivrer})
+  nbLivrer : findResto.restaurant.commandeLivrer})
 
 })
 
@@ -54,8 +57,8 @@ router.get('/liste', (req, res, next) => {
   tableauCommande : tabCom.tabCommande,
   nbPret : findResto.restaurant.commandePrep,
   nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
-  nbLivrer : findResto.restaurant.nbLivrer });
+  nbLivrer : findResto.restaurant.commandeLivrer });
 });
 
 
-module.exports = router;
+module.exports = router,tabCom;

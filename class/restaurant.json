@@ -1,0 +1,160 @@
+{
+  "restaurants": [
+    {
+      "nom": "Maharaja",
+      "plat": "Chicken Korma",
+      "adresse": "Boulevard Maurice Lemonnier 163, 1000 Bruxelles",
+      "geolocalisation": { "lat": 50.84201, "lng": 4.34272 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Mumbai Dreams",
+      "plat": "Poulet Tandoori",
+      "adresse": "Rue Basse 9, 1180 Uccle",
+      "geolocalisation": { "lat": 50.79235, "lng": 4.35246 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Bombay Inn",
+      "plat": "Samosa",
+      "adresse": "Rue de la Fourche 38, 1000 Bruxelles",
+      "geolocalisation": { "lat": 50.84869, "lng": 4.35335 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Taste of Raaj",
+      "plat": "Curry de veau",
+      "adresse": "Chaussée de Waterloo 591, 1050 Ixelles",
+      "geolocalisation": {
+        "lat": 50.818272123770015,
+        "lng": 4.3636452136252135
+      },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "DOLCE e SALATO",
+      "plat": "Spaghetti Bolognese",
+      "adresse": "Camille Vandeloockstraat 14, 1600 Sint-Pieters-Leeuw",
+      "geolocalisation": { "lat": 50.80513662423276, "lng": 4.284697442460059 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Il Sorrento Ristorante",
+      "plat": "Lasagne",
+      "adresse": "Kerkplein 32, 1601 Sint-Pieters-Leeuw",
+      "geolocalisation": { "lat": 50.7899734045094, "lng": 4.297979998283709 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "La Mia Cucina 2",
+      "plat": "Spaghetti Carbonara",
+      "adresse": "Herman Teirlinckplein 2, 1650 Beersel",
+      "geolocalisation": { "lat": 50.76679558061196, "lng": 4.307973411777522 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Il Carpaccio",
+      "plat": "Grand Stromboli",
+      "adresse": "Chaussée de Waterloo 1033, 1180 Uccle",
+      "geolocalisation": { "lat": 50.80421038802663, "lng": 4.372205659647081 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Los agaves",
+      "plat": "Chilaquiles",
+      "adresse": "Avenue Jean Volders 4A, 1060 Saint-Gilles",
+      "geolocalisation": {
+        "lat": 50.832711555966306,
+        "lng": 4.343246255955285
+      },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Los Tacos",
+      "plat": "Taco",
+      "adresse": "Quai aux Briques 30, 1000 Bruxelles",
+      "geolocalisation": { "lat": 50.85186933537392, "lng": 4.347731755955748 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Rosita’s Cantina",
+      "plat": "Enchiladas",
+      "adresse": "Rue du Pont de la Carpe 12, 1000 Bruxelles",
+      "geolocalisation": {
+        "lat": 50.84865257894676,
+        "lng": 4.3476253136260965
+      },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "El Café",
+      "plat": "Burritos",
+      "adresse": "Avenue de la Couronne 463, 1050 Bruxelles",
+      "geolocalisation": { "lat": 50.81622244444505, "lng": 4.390430100130724 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Lilicup",
+      "plat": "Cupcake météorite",
+      "adresse": "Rue du Page 65, 1050 Bruxelles",
+      "geolocalisation": { "lat": 50.8237582915502, "lng": 4.358082564108263 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Snack Twins",
+      "plat": "Assiette 7 saveurs",
+      "adresse": "Avenue brugmann 474 1180 uccle, 1180 Brussel",
+      "geolocalisation": { "lat": 50.80266152679233, "lng": 4.341190698284046 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Brugmann",
+      "plat": "Cheese-cake au speculoos belge",
+      "adresse": "Avenue Brugmann 52/54, 1190 Forest",
+      "geolocalisation": {
+        "lat": 50.82012968244938,
+        "lng": 4.3522548518793425
+      },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    },
+    {
+      "nom": "Snack Friture Sofra",
+      "plat": "Cupcake météorite",
+      "adresse": "Félix Wittouckstraat 1, 1600 Sint-Pieters-Leeuw",
+      "geolocalisation": { "lat": 50.80794113506365, "lng": 4.289287738767496 },
+      "commandeTot": 0,
+      "commandePrep": 0,
+      "commandeLivrer": 0
+    }
+  ]
+}
