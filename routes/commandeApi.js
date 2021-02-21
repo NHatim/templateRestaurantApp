@@ -3,9 +3,11 @@ const router = new express.Router();
 const { body, validationResult } = require('express-validator');
 const createError = require('http-errors');
 const Commande = require('../class/commande.js');
-const fs = require('fs');
 const NodeGeocoder = require('node-geocoder');
+
+const fs = require('fs');
 const loadRestaurants = []
+
 fs.readFile('/home/hatim/Bureau/projet-NHatim/class/restaurant.json', 'utf8', (err, fileContents) => {
 
     const data = JSON.parse(fileContents);
@@ -29,6 +31,7 @@ const geoCoder = NodeGeocoder(options);
 let restaurant = "";
 let numCommande = 1;
 const tabCommande = [];
+
 router.get('/', (req, res, next) => {
   res.render('index', { title: 'Eat It | Livraison de repas' });
 });
@@ -97,7 +100,6 @@ async (req, res,next) =>{
     });
     tabCommande.push(commande);
     numCommande++;
-    console.log(commande);
     res.render('created', {title: 'Eat It | Confirmation', nom : commande.nom, prenom : commande.prenom,
     nombre : commande.nbRepas, adresse : commande.adresse, restaurant : nomResto, plat : platResto, geolocalisation : commande.geolocalisation});
   }
@@ -106,4 +108,3 @@ async (req, res,next) =>{
 module.exports = router;
 module.exports.tabCommande = tabCommande;
 module.exports.loadRestaurants = loadRestaurants;
-
