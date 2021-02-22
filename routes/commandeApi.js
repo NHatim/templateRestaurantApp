@@ -8,11 +8,7 @@ const NodeGeocoder = require('node-geocoder');
 const fs = require('fs');
 const loadRestaurants = []
 
-
-fs.readFile('/home/hatim/Bureau/projet-NHatim/class/restaurant.json', 'utf8', (err, fileContents) => {
-
 const path = require('path');
-
 const filePath = path.join(__dirname, '..', 'class', 'restaurant.json');
 fs.readFile(filePath, 'utf8', (err, fileContents) => {
 
