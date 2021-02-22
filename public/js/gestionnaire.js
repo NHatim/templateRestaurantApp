@@ -1,25 +1,22 @@
-$.ajax({
-  url: "https://raw.githubusercontent.com/RichmondDay/public/master/test_vehicle_inventory_data.json",
-  method: "GET",
-  dataType: 'json',
-  success: function(data) {
-    console.log(typeof(data));
-    var html_to_append = '';
-    $.each(data, function(i, item) {
-      html_to_append +=
-      '<div class="col-3 mb-3"><div class="text-uppercase"><p>' +
-      item.Name +
-      '<div class="col-3 mb-3"><div class="ext-uppercase"><p>' +
-      item.Price +
-      '</p></div><img  class="image img-fluid" src="' +
-      item.photo +
-      '" /><p class="company">' +
-      item.Retailer +
-      '</p></div>';
+const table_body = document.getElementById('liste_commande');
+
+function updateListeCommande() {
+  fetch('/gestionnaire/api')
+    .then(response => response.json())
+    .then(data => {
+      const liste_commande = data.commandeApi;
+      liste_commande.forEach(commande => {
+        const line = document.createElement('tr');
+        const col1 = document.createElement('td');
+        col1.innerText = commande.heure_commande;
+        const col2 = document.createElement('td');
+        const col3 = document.createElement('td');
+        line.appendChild(col1);
+        line.appendChild(col2);
+        line.appendChild(col3);
+        table_body.appendChild(line);
+      });
     });
-    $("#items-container").html(html_to_append);
-  },
-  error: function() {
-    console.log(data);
-  }
-});
+}
+
+updateListeCommande();
