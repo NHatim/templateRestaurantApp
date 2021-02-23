@@ -53,8 +53,11 @@ router.post('/confirmation-commande',(req,res,next) =>{
 
 router.post('/commande-livrer', (req,res,next) =>{
   commandeClient.heureLivraison = new Date().toString().slice(16,24);
-  commandeClient.etatCommande = "livrer";
-  commandeClient.restaurant.commandeLivrer++;
+  if(!commandeClient.nomLivreur){
+    commandeClient.etatCommande = "livrer";
+    commandeClient.restaurant.commandeLivrer++;
+    commandeClient.nomLivreur = `${req.session.nom} ${req.session.prenom}`
+  }
   res.render('espace-livreur', {title: 'Eat It | Section Livreur liste restaurant', nom : req.session.nom, prenom : req.session.prenom, tabRestaurant : commandeApi.loadRestaurants})
 })
 

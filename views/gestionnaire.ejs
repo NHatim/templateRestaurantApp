@@ -1,16 +1,15 @@
 <%- include('header'); -%>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer></script>
 <script src="/js/gestionnaire.js" defer></script>
 <main class="container">
   <div class= "main-wrapper">
     <button class= "up-down"><i class="fa fa-angle-up"></i></button>
-    <div class= "header header-mexicain">
+    <div class= "header header-gestionnaire">
       <div class= "navbar">
         <a href="/"><span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
       </div>
       <div class= "intro intro-restaurant">
       <span id= "spn-1">
-        <h1> Restaurant : Mexicain</br></br>
+        <h1> Gestionnaire : Liste commande</br></br>
         </h1>
       </span>
     </div>
@@ -18,16 +17,26 @@
     <div class= "service"><!-- div 2-->
       <h1>Liste restaurant</h1>
       <div class="liste-restaurant">
+        <form action="/gestionnaire/annulation-commande" method="POST">
         <table class="table table-striped">
           <thead>
             <tr>
-              <th>Heure de commande</th>
-              <th>Blablab</th>
-              <th>Action</th>
+              <th>Date et heure de commande</th>
+              <th>Adresse de livraison</th>
+              <th>Nom restaurant</th>
+              <th>Date et heure préparation</th>
+              <th>Nom livreur</th>
+              <th>Date et heure enlèvement</th>
+              <th>Date et heure livraison</th>
+              <th>Etat de la commande</th>
+              <th></th>
             </tr>
           </thead>
-          <tbody id="liste_commande"></tbody>
+
+          <tbody id="liste-commande"></tbody>
+
         </table>
+      </form>
       </div>
     </div>
     <div class= "footer"><!-- div 3-->
@@ -44,6 +53,6 @@
     &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
     </span>
   </div>
-  <script src="js/liste_commande.js"></script>
 </main>
+
 <%- include('footer') -%>

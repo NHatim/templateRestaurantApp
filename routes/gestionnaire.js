@@ -11,11 +11,7 @@ router.get('/', (req, res, next) => {
 });
 
 router.get('/api', (req, res, next) => {
-  res.json({commandeApi : [
-    {
-      heure_commande: '12:25'
-    }
-  ]});
+  res.json({commandeApi : commandeApi.tabCommande});
 })
 
 
