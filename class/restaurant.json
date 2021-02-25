@@ -7,6 +7,7 @@
       "geolocalisation": { "lat": 50.84201, "lng": 4.34272 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -16,6 +17,7 @@
       "geolocalisation": { "lat": 50.79235, "lng": 4.35246 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -25,7 +27,9 @@
       "geolocalisation": { "lat": 50.84869, "lng": 4.35335 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
+
     },
     {
       "nom": "Taste of Raaj",
@@ -37,6 +41,7 @@
       },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -46,6 +51,7 @@
       "geolocalisation": { "lat": 50.80513662423276, "lng": 4.284697442460059 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -55,6 +61,7 @@
       "geolocalisation": { "lat": 50.7899734045094, "lng": 4.297979998283709 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -64,6 +71,7 @@
       "geolocalisation": { "lat": 50.76679558061196, "lng": 4.307973411777522 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -73,10 +81,11 @@
       "geolocalisation": { "lat": 50.80421038802663, "lng": 4.372205659647081 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
-      "nom": "Los agaves",
+      "nom": "Los Agaves",
       "plat": "Chilaquiles",
       "adresse": "Avenue Jean Volders 4A, 1060 Saint-Gilles",
       "geolocalisation": {
@@ -85,6 +94,7 @@
       },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -94,6 +104,7 @@
       "geolocalisation": { "lat": 50.85186933537392, "lng": 4.347731755955748 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -106,6 +117,7 @@
       },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -115,6 +127,7 @@
       "geolocalisation": { "lat": 50.81622244444505, "lng": 4.390430100130724 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -124,6 +137,7 @@
       "geolocalisation": { "lat": 50.8237582915502, "lng": 4.358082564108263 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -133,6 +147,7 @@
       "geolocalisation": { "lat": 50.80266152679233, "lng": 4.341190698284046 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -145,6 +160,7 @@
       },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     },
     {
@@ -154,6 +170,7 @@
       "geolocalisation": { "lat": 50.80794113506365, "lng": 4.289287738767496 },
       "commandeTot": 0,
       "commandePrep": 0,
+      "commandeEnlever": 0,
       "commandeLivrer": 0
     }
   ]

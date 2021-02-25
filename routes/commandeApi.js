@@ -93,6 +93,7 @@ async (req, res,next) =>{
     const commande = new Commande(numCommande, req.body.nom, req.body.prenom , req.body.nombre, adresse, restoCommande ,  date.toLocaleDateString('fr-FR', options), heure);
     commande.etatCommande = "aprep"
     commande.restaurant.commandeTot++;
+    commande.dateCreation = new Date();
     await geoCoder.geocode(adresse)
     .then((res)=> {
     commande.geolocalisation =  {lat : res[0].latitude, lng : res[0].longitude}
@@ -102,6 +103,7 @@ async (req, res,next) =>{
     });
     tabCommande.push(commande);
     numCommande++;
+    console.log(tabCommande);
     res.render('created', {title: 'Eat It | Confirmation', nom : commande.nom, prenom : commande.prenom,
     nombre : commande.nbRepas, adresse : commande.adresse, restaurant : nomResto, plat : platResto, geolocalisation : commande.geolocalisation});
   }

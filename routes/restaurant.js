@@ -1,20 +1,21 @@
 const express = require('express');
 const router = new express.Router();
-const tabCom = require('./commandeApi');
+const commandeApi = require('./commandeApi');
 let findResto;
-/* GET users listing. */
+
+
+
 router.get('/', (req, res, next) => {
-  res.render('restaurant', {title: 'Eat It | Section restaurateur', restaurant : tabCom.loadRestaurants});
+  res.render('liste-restaurant', {title: 'Eat It | Section restaurateur', restaurant : commandeApi.loadRestaurants});
+});
+
+router.get('/api', (req, res, next) => {
+  res.json({loadRestaurants : commandeApi.loadRestaurants, tabCommande : commandeApi.tabCommande});
 });
 
 router.post('/liste', (req, res, next) => {
-  findResto = tabCom.tabCommande.find(element => element.restaurant.nom === req.body.restaurant)
-  res.render('monrestaurant', {title: 'Eat It | Section restaurateur',
-  restaurant : findResto ? findResto.restaurant.nom : req.body.restaurant ,
-  tableauCommande : tabCom.tabCommande,
-  nbPret : findResto ? findResto.restaurant.commandePrep : 0 ,
-  nbRestant : findResto ? (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep) : 0,
-  nbLivrer : findResto ? findResto.restaurant.commandeLivrer : 0 });
+  findResto = commandeApi.loadRestaurants.find(element => element.nom === req.body.restaurant);
+  res.render('restaurateur', {title: 'Eat It | Section restaurateur', restaurant : findResto.nom});
 
 });
 
@@ -22,43 +23,26 @@ router.post('/confirmation', (req, res, next) => {
   const date = new Date();
   const options = {year: 'numeric', month: 'numeric', day: 'numeric' };
   const heure = new Date().toString().slice(16,24);
-  tabCom.tabCommande.forEach(element => {
-    if(element.numero == req.body.button){
+  commandeApi.tabCommande.forEach(element => {
+    if(element.numero === parseInt(req.body.commande)){
       element.etatCommande = "pret";
       element.datePrep = date.toLocaleDateString('fr-FR', options);
       element.heurePrep = heure;
+      element.datePreparation = new Date();
       element.restaurant.commandePrep++;
     }
   });
-  res.render('monrestaurant', {title: 'Eat It | Section restaurateur',
-  restaurant : findResto.restaurant.nom,
-  tableauCommande : tabCom.tabCommande,
-  nbPret : findResto.restaurant.commandePrep,
-  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
-  nbLivrer : findResto.restaurant.commandeLivrer });
-
-  console.log(tabCom.tabCommande);
+  res.render('restaurateur', {title: 'Eat It | Section restaurateur',
+  restaurant : findResto.nom});
 });
-
 router.get('/confirmation', (req,res,next) =>{
-  res.render('monrestaurant', {title: 'Eat It | Section restaurateur',
-  restaurant : findResto.restaurant.nom,
-  tableauCommande : tabCom.tabCommande,
-  nbPret : findResto.restaurant.commandePrep,
-  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
-  nbLivrer : findResto.restaurant.commandeLivrer})
-
+  res.render('restaurateur', {title: 'Eat It | Section restaurateur',restaurant : findResto.nom})
 })
 
 
 router.get('/liste', (req, res, next) => {
-  res.render('monrestaurant', {title: 'Eat It | Section restaurateur',
-  restaurant : findResto.restaurant.nom,
-  tableauCommande : tabCom.tabCommande,
-  nbPret : findResto.restaurant.commandePrep,
-  nbRestant : (findResto.restaurant.commandeTot - findResto.restaurant.commandePrep),
-  nbLivrer : findResto.restaurant.commandeLivrer });
+  res.render('restaurateur', {title: 'Eat It | Section restaurateur', restaurant : findResto.nom});
 });
 
 
-module.exports = router,tabCom;
+module.exports = router,commandeApi;

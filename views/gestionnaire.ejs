@@ -14,10 +14,10 @@
       </span>
     </div>
     </div>
-    <div class= "service"><!-- div 2-->
+    <div class= "service gestionnaire"><!-- div 2-->
       <h1>Liste restaurant</h1>
-      <div class="liste-restaurant">
-        <form action="/gestionnaire/annulation-commande" method="POST">
+      <div class="liste-commande-gestionnaire">
+        <form onsubmit="return reponse" action="/gestionnaire/annulation-commande" method="POST">
         <table class="table table-striped">
           <thead>
             <tr>
@@ -38,6 +38,7 @@
         </table>
       </form>
       </div>
+      <button class="btn btn-primary btn-table-commande"><a href="/gestionnaire/vider-table-commande">Suppression de toute la table</a></button>
     </div>
     <div class= "footer"><!-- div 3-->
       <div class= "logo"></div>

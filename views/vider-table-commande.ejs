@@ -1,0 +1,40 @@
+<%- include('header'); -%>
+<script src="/js/vider-table-commande.js" defer></script>
+<main class="container">
+  <div class= "main-wrapper">
+    <button class= "up-down"><i class="fa fa-angle-up"></i></button>
+    <div class= "header header-gestionnaire">
+      <div class= "navbar">
+        <a href="/"><span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+      </div>
+      <div class= "intro intro-restaurant">
+        <span id= "spn-1">
+          <h1> Gestionnaire : Suppression commandes</br></br>
+          </h1>
+        </span>
+      </div>
+    </div>
+    <div class= "service"><!-- div 2-->
+      <h1>Vider la table de commande</h1>
+      <div class="liste-commande-gestionnaire">
+        <form onsubmit="return reponse" action="/gestionnaire/vider-table-commande" method="POST">
+          <button class="btn btn-primary btn-vider-table" type="submit">Suppression de toutes les commandes</button>
+        </form>
+      </div>
+    </div>
+    <div class= "footer"><!-- div 3-->
+      <div class= "logo"></div>
+      <div class= "general">
+        <ul>
+          <li><a href= "https://github.com/NHatim">GitHub</a></li>
+          <li><a href= "mailto:hatim.naimi@gmail.com">Contactez-moi</a></li>
+        </ul>
+      </div>
+    </div>
+    <span id= "spn-4"><i class= "fa fa-copyright"></i>
+      &nbsp; Copyrights to : FoodCuBo Code Pen & Modification par NAIMI Hatim
+    </span>
+  </div>
+</main>
+
+<%- include('footer') -%>

@@ -48,6 +48,7 @@ router.post('/confirmation-commande',(req,res,next) =>{
   commandeClient = commandeApi.tabCommande.find(element => element.numero === parseInt(req.body.commande));
   commandeClient.heureEnlevement = new Date().toString().slice(16,24);
   commandeClient.etatCommande = "enlever";
+  commandeClient.restaurant.commandeEnlever++;
   res.render('livreur-confirmation', { title: 'Eat It | Section Livreur confirmation commande', commandeClient : commandeClient});
 })
 

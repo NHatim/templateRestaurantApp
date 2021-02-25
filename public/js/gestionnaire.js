@@ -1,6 +1,5 @@
 const tableBody = document.getElementById('liste-commande');
-
-
+let reponse = false;
 
 function majListeCommande() {
   fetch('/gestionnaire/api')
@@ -25,13 +24,34 @@ function majListeCommande() {
         const col7 = document.createElement('td');
         col7.innerText =  commande.heureLivraison ? `${commande.date} ${commande.heureLivraison}` : '';
         const col8 = document.createElement('td');
-        col8.innerText = `${commande.etatCommande}`;
+        switch(commande.etatCommande){
+          case "aprep":
+            col8.style.backgroundColor = "red";
+            col8.innerText = `À préparer`;
+            break;
+          case "pret" :
+            col8.style.backgroundColor = "yellow";
+            col8.innerText = `Prête`;
+            break;
+          case "enlever":
+            col8.style.backgroundColor = "#ff8000";
+            col8.innerText = `En route`;
+            break;
+          case "livrer":
+            col8.style.backgroundColor = "green";
+            col8.innerText = `Livrer`;
+            break;
+        }
+
         const col9 = document.createElement('button');
         col9.innerText = 'Supprimer'
         col9.setAttribute("name","commande");
         col9.setAttribute("type","submit");
         col9.setAttribute("value", commande.numero);
         col9.classList = "btn btn-danger btn-gestionnaire";
+        col9.addEventListener("click", () =>{
+          reponse = confirm("Veuillez confirmer la supression de la commande");
+        })
         line.appendChild(col1);
         line.appendChild(col2);
         line.appendChild(col3);
@@ -40,9 +60,8 @@ function majListeCommande() {
         line.appendChild(col6);
         line.appendChild(col7);
         line.appendChild(col8);
-        line.appendChild(col9)
+        line.appendChild(col9);
         tableBody.appendChild(line);
-
       });
     });
 }
