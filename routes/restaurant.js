@@ -28,8 +28,9 @@ router.post('/confirmation', (req, res, next) => {
       element.etatCommande = "pret";
       element.datePrep = date.toLocaleDateString('fr-FR', options);
       element.heurePrep = heure;
-      element.datePreparation = new Date();
+      element.tempsMs = (new Date() - element.dateCreation);
       element.restaurant.commandePrep++;
+      console.log(element.tempsMs)
     }
   });
   res.render('restaurateur', {title: 'Eat It | Section restaurateur',
