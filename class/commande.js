@@ -19,6 +19,6 @@ module.exports = class Commande {
     this.etatCommande = "";
   }
 }
-
-
+let numCommande = 1
+module.exports.numCommande = numCommande;
 

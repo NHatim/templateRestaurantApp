@@ -12,6 +12,8 @@ body{
   width: 200%;
   box-shadow: #252525;
 }
+
+
 #logo-name-1 {
   cursor: pointer;
   font-family: 'Lato', sans-serif;
@@ -489,5 +491,9 @@ margin: auto;
   margin-left: 38%;
 }
 
+.confirmation{
+  margin-top: 3%;
+  margin-left: 2%;
+}
 
 

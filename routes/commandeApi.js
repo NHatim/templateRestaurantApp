@@ -12,18 +12,18 @@ const path = require('path');
 const filePath = path.join(__dirname, '..', 'class', 'restaurant.json');
 fs.readFile(filePath, 'utf8', (err, fileContents) => {
 
-    const data = JSON.parse(fileContents);
-    const mesRestos = []
-    for (const geolocalisation in data) {
-      if (Object.hasOwnProperty.call(data, geolocalisation)) {
-        const element = data[geolocalisation];
-       mesRestos.push(element);
-      }
+  const data = JSON.parse(fileContents);
+  const mesRestos = []
+  for (const geolocalisation in data) {
+    if (Object.hasOwnProperty.call(data, geolocalisation)) {
+      const element = data[geolocalisation];
+      mesRestos.push(element);
     }
-    for (const element of mesRestos[0]) {
-        loadRestaurants.push(element);
-    }
-  })
+  }
+  for (const element of mesRestos[0]) {
+    loadRestaurants.push(element);
+  }
+})
 
 const options = {
   provider: 'google',
@@ -31,7 +31,7 @@ const options = {
 };
 const geoCoder = NodeGeocoder(options);
 let restaurant = "";
-let numCommande = 1;
+let numCommande = Commande.numCommande;
 const tabCommande = [];
 
 router.get('/', (req, res, next) => {
@@ -96,7 +96,7 @@ async (req, res,next) =>{
     commande.dateCreation = new Date();
     await geoCoder.geocode(adresse)
     .then((res)=> {
-    commande.geolocalisation =  {lat : res[0].latitude, lng : res[0].longitude}
+      commande.geolocalisation =  {lat : res[0].latitude, lng : res[0].longitude}
     })
     .catch((err)=> {
       console.log(err);
@@ -112,3 +112,4 @@ async (req, res,next) =>{
 module.exports = router;
 module.exports.tabCommande = tabCommande;
 module.exports.loadRestaurants = loadRestaurants;
+module.exports.numCommande = numCommande;

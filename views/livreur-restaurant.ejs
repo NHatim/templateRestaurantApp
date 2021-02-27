@@ -1,16 +1,15 @@
 <%- include('header'); -%>
-<script src="/js/espace-livreur.js"defer></script>
-<script src="/js/livreur-restaurant-btn.js"defer></script>
+
 <main class="container">
   <div class= "main-wrapper">
     <button class= "up-down"><i class="fa fa-angle-up"></i></button>
     <div class= "header header-livreur">
       <div class= "navbar">
-        <a href="/"<span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
+        <a href="/"><span id= "logo-name-1">Eat <span id="logo-name-2">It </span></span></a>
       </div>
       <div class= "intro intro-restaurant">
         <span id= "spn-1">
-          <h1> Commande à livrer pour <%= resto.nom %>
+          <h1> Enlèvement de commande pour le restaurant <%= resto.nom %>
           </h1>
         </span>
       </div>
@@ -21,14 +20,15 @@
         <div class="col">
           <li class="livreur-restaurant" numero="<%= tabNumCom %>" geolocalisation-lat="<%= resto.geolocalisation.lat %>" geolocalisation-lng="<%= resto.geolocalisation.lng %>">Restaurant <%= resto.nom%>, adresse : <%=resto.adresse %> </li>
           <form onsubmit="return valeur" action="/livreur/confirmation-commande" method="POST">
-          <button name ="commande" value="" type="submit" class="btn btn-success livreur-btn">Choisir commande</button>
-        </form>
+            <button name ="commande" value="" type="submit" class="btn btn-success livreur-btn">Choisir commande</button>
+          </form>
         </div>
         <div class="col">
           <div id="map"></div>
+          <script src="/js/espace-livreur.js"></script>
+          <script src="/js/livreur-restaurant-btn.js"></script>
           <script
           src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBgzsppydLqk_aKI4DIcG1uUkVwUhrsj7A&callback=initMap&libraries=&v=weekly"
-          async
           ></script>
         </div>
       </div>

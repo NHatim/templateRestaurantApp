@@ -42,7 +42,7 @@ function majStatsResto() {
     var diffMins = Math.round(((tempsMilli % 86400000) % 3600000) / 60000);
     const date = new Date();
     liStats.textContent = `Commande à préparer : ${findResto.commandeTot - findResto.commandePrep} |
-    prêt à être enlever : ${findResto.commandePrep} |
+    prêt à être enlever : ${findResto.commandePrep - findResto.commandeEnlever} |
     déjà enlever : ${findResto.commandeEnlever} |
     Délai prép. minutes : ${diffMins ? (diffMins / findResto.commandePrep) : 0} |
     Date MÀJ : ${date.toLocaleDateString('fr-FR', options)} ${new Date().toString().slice(16,24)}`

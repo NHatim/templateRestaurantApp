@@ -7,7 +7,7 @@ let valeur;
 
 btn.addEventListener('click', () =>{
 
-  valeur = prompt(`Veuillez choisir le numéro de la commande à livrer, numéro de commande disponible : ${numCom}`);
+  valeur = prompt(`Veuillez choisir le numéro de la commande à enlever, numéro de commande disponible : ${numCom}`);
 
   let findCom = numCom.find(element =>  element === valeur )
   if(Math.sign(parseInt(findCom)) === 1){
