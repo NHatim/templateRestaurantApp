@@ -38,7 +38,7 @@ router.get('/', (req, res, next) => {
   res.render('index', { title: 'Eat It | Livraison de repas' });
 });
 router.get('/indien', (req, res, next) =>{
-  res.render('indien', {title: 'Eat It | Restaurant Indien'});
+  res.render('indien', {title: 'Eat It | Restaurant Indien '});
 });
 router.get('/italien', (req, res, next) =>{
   res.render('italien', {title: 'Eat It | Restaurant Italien'});
