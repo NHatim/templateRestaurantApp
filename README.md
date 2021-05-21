@@ -1,6 +1,6 @@
-<<<<<<< HEAD
+
 # templateRestaurantApp
-=======
+
 # projweb2-project
 
 Steps to reproduce:
@@ -10,4 +10,4 @@ Steps to reproduce:
 - add nodemon
 - add ESLint and Prettier dependencies and configuration
 - create Chrome and nodemon launch configurations
->>>>>>> Initial commit
+
